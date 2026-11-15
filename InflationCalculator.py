@@ -4,6 +4,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Read the CPI data from the CSV file
 cpi_data = pd.read_csv("STATIC_INFLATIONCALC.csv", skiprows=8)
@@ -42,8 +43,13 @@ for i in range(len(cpi_data)):
 
         annual_changes.append(change)
 
+
+# Convert the annual changes into a NumPy array
+annual_changes = np.array(annual_changes, dtype=float)
+
 # Add the annual changes as a new column
 cpi_data["Annual Change (%)"] = annual_changes
+
 
 # Display the last five rows
 print(cpi_data.tail(5))
