@@ -4,7 +4,6 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Read the CPI data from the CSV file
 cpi_data = pd.read_csv("STATIC_INFLATIONCALC.csv", skiprows=8)
@@ -83,8 +82,6 @@ ax2.legend(loc="upper right")
 # Save the graph
 plt.tight_layout()
 plt.savefig("CPI_Graph.png")
-
-# plt.show()
 
 
 
@@ -189,4 +186,7 @@ print("Equivalent Price: ${:,.2f} CAD".format(new_price))
 print("Percentage Change: {:.2f}%".format(percent_change))
 print("Number of Years: {:.2f}".format(years))
 print("Average Annual Inflation Rate: {:.2f}%".format(annual_rate))
+
+# Display the CPI graph after the calculator results
+plt.show()
 

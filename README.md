@@ -3,80 +3,77 @@
 
 ## Description
 
-This project analyzes Canada's Consumer Price Index (CPI) using Python and monthly data from the Bank of Canada. The program reads the CPI data, calculates annual percentage changes, and creates a graph illustrating changes in the CPI and inflation over time.
+This project uses Python to examine Canada's Consumer Price Index (CPI) and calculate inflation using monthly data from the Bank of Canada. The program creates a graph of historical CPI levels and annual percentage changes, then uses the data to compare prices between two periods.
 
-An inflation calculator is also included to compare prices between two selected periods. Users can enter an original price along with the month and year for each period. The calculator uses the corresponding CPI values to determine the equivalent price, overall percentage change, and average annual inflation rate.
+The inflation calculator builds on the Bank of Canada's original version by allowing users to select a specific month and year instead of just a year.
 
 ## Project Files
 
-- **InflationCalculator.py**: Python program used to read and analyze CPI data, generate the graph, and run the inflation calculator.
-- **STATIC_INFLATIONCALC.csv**: Monthly CPI data obtained from the Bank of Canada.
-- **CPI_Graph.png**: Graph displaying CPI levels and annual percentage changes over time.
-- **README.md**: Project overview, instructions, analysis, and sample output.
-
+- **InflationCalculator.py**: Main Python file containing the CPI analysis, graph and inflation calculator.
+- **STATIC_INFLATIONCALC.csv**: Monthly CPI dataset downloaded from the Bank of Canada.
+- **CPI_Graph.png**: Graph of Canadian CPI levels and annual inflation from 1914 to 2026.
+- **README.md**: Project description, instructions and sample results.
 
 ## How to Run the Program
 
-1. **Download the project:** Download or clone the GitHub repository and save it to a folder on your computer.
-
-2. **Open the project in Visual Studio Code:** Launch VS Code and select File > Open Folder. Choose the downloaded FINE3300-2026-A2 folder. Ensure that InflationCalculator.py and STATIC_INFLATIONCALC.csv are located in the same folder.
-
-3. **Set up Python:** Ensure Python is installed and that the Python extension is enabled in VS Code. Select the appropriate Python interpreter using the interpreter selection menu.
-
-4. **Install the required libraries:** Open the terminal in VS Code by selecting Terminal > New Terminal. Install Pandas, Matplotlib, and NumPy using the following command:
+1. Download or clone the GitHub repository.
+2. Open the project folder in Visual Studio Code using File > Open Folder. Make sure the Python file and CSV dataset are saved in the same folder.
+3. Ensure Python is installed and select the appropriate Python interpreter in VS Code.
+4. Open Terminal > New Terminal and install the required libraries:
 
    ```bash
-   python -m pip install pandas matplotlib numpy
+   python -m pip install pandas matplotlib
    ```
 
-5. **Run the Python program:** Open InflationCalculator.py and click the Run Python File button in the top-right corner of VS Code. The program will read the CPI dataset, calculate annual percentage changes, and save the graph as CPI_Graph.png.
-
-6. **Enter the calculator inputs:** Once the program reaches the inflation calculator, enter the following information when prompted:
-   - Original price of the goods or services in dollars
-   - Starting year
-   - Starting month (1-12)
-   - Ending year
-   - Ending month (1-12)
-
-7. **View the results:** After all inputs have been entered, the program will display the CPI values for both dates, the equivalent price in the second period, the overall percentage change, the number of years between the dates, and the average annual inflation rate.
-
-8. **View the CPI graph:** Open CPI_Graph.png from the project folder to view the graph showing historical CPI levels on the left axis and annual percentage changes on the right axis.
+5. Open `InflationCalculator.py` and click Run Python File.
+6. Enter the original price, followed by the starting and ending years and months. Months should be entered as numbers from 1 to 12.
+7. The calculator displays the CPI values for both periods, the equivalent price, percentage change and average annual inflation rate. It also calculates the number of years between the dates.
+8. The CPI graph is saved automatically as `CPI_Graph.png` and is displayed after the calculator results.
 
 ### Input Validation
 
-The program checks that the original price is greater than zero and that both dates are available in the CPI dataset. Months must be between 1 and 12, and the selected dates must fall within the available data, from January 1914 to September 2026.
+The program checks that the price is greater than zero and that both dates are available in the CPI dataset. Invalid entries produce an error message and the user is asked to try again.
 
-If an invalid price or date is entered, an error message will appear, and the program will prompt the user to enter a valid value.
+The available data covers January 1914 to September 2026.
 
+## CPI Analysis
 
-## Consumer Price Index (CPI) Analysis
+The CPI measures changes in the price level of a basket of consumer goods and services. Annual percentage changes are calculated by comparing each month's CPI with the value from the same month in the previous year.
 
-The dataset contains monthly CPI observations from January 1914 to September 2026. Annual percentage changes are calculated by comparing the CPI of each month with the corresponding month in the previous year.
+The graph uses the left axis for CPI levels and the right axis for annual percentage changes. A dotted horizontal line marks the CPI base level of 100, with 2002 as the reference year.
 
 ### CPI Graph
 
 ![Canadian CPI and Annual Inflation](CPI_Graph.png)
 
-### Observations
+### Graph Observations
 
-The graph shows a significant increase in Canada's CPI over time, particularly beginning in the 1970s. This reflects the long-term rise in the overall price level of goods and services.
+The CPI remained relatively low during the first half of the twentieth century before increasing more rapidly from the 1970s onward. By September 2026, the index had reached 170.0, compared with approximately 6.0 in January 1914.
 
-Annual inflation has fluctuated throughout the period, with some of the largest increases and decreases occurring during the early twentieth century. Inflation was also relatively high during the 1970s and early 1980s.
+Annual inflation shows a different pattern. While the CPI has generally increased over time, the rate of inflation has fluctuated considerably.
 
-A more recent increase in inflation occurred around 2021 and 2022, followed by a decline in the annual rate. However, CPI levels continued to rise, indicating that prices were still increasing, although at a slower rate.
+Some notable periods include:
+
+- **1917-1921:** Inflation increased sharply during the First World War period before turning negative in the early 1920s. The graph shows some of the largest annual changes during these years.
+- **1930s:** CPI declined during the Great Depression, with annual percentage changes falling below zero. This indicates a period of deflation.
+- **1970s and early 1980s:** Inflation remained elevated for several years, reaching double-digit rates at certain points.
+- **2021-2022:** Inflation increased again, reaching approximately 8% before declining in the following years.
+
+Although the inflation rate fell after 2022, the CPI continued rising. This shows that a lower inflation rate does not necessarily mean prices are decreasing. Instead, prices may still be increasing at a slower pace.
 
 ## Inflation Calculator
 
-The inflation calculator compares the cost of goods and services between two selected months and years using the corresponding CPI values.
+The calculator uses CPI values from two selected months to estimate how the cost of goods and services has changed.
 
-The equivalent price is calculated as follows:
+The equivalent price is calculated using:
 
-Equivalent Price = Original Price × (Second CPI / First CPI)
+**Equivalent Price = Original Price × (Second CPI / First CPI)**
 
-The calculator also determines the overall percentage change, the number of years between the selected dates, and the average annual inflation rate.
+The percentage change is calculated as:
 
-Input validation ensures that the original price is positive and that both dates fall within the available CPI data. Invalid entries prompt the user to enter new values.
+**Percentage Change = ((Second CPI / First CPI) - 1) × 100**
 
+The program also calculates the average annual inflation rate using the time between the two selected periods.
 
 ## Sample Output
 
@@ -106,14 +103,10 @@ Number of Years: 1.00
 Average Annual Inflation Rate: 3.09%
 ```
 
-Based on the CPI values, goods costing $100 in September 2025 would cost approximately $103.09 in September 2026, representing a 3.09% increase over the year.
+Based on the CPI values, goods costing $100 in September 2025 would cost approximately $103.09 in September 2026. This represents a price increase of 3.09% over one year.
 
 
-## References
+## Data Source
 
-- Bank of Canada. Inflation Calculator.
-  https://www.bankofcanada.ca/rates/related/inflation-calculator/
-- Statistics Canada. Consumer Price Index.
-  https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes
-- Mastrodomenico, R. (2022). The Python Book. Wiley.
-- FINE 3300: Python for Finance Professionals, Fall 2026 lecture materials.
+Bank of Canada: https://www.bankofcanada.ca/valet/observations/STATIC_INFLATIONCALC/csv
+
