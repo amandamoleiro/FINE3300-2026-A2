@@ -1,7 +1,7 @@
 
 # FINE 3300 - Assignment #2
 
-## Introduction
+## Description
 
 This project analyzes Canada's Consumer Price Index (CPI) using Python and monthly data from the Bank of Canada. The program reads the CPI data, calculates annual percentage changes, and creates a graph illustrating changes in the CPI and inflation over time.
 
