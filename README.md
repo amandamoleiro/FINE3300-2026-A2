@@ -3,7 +3,7 @@
 
 ## Description
 
-This project uses Python to examine Canada's Consumer Price Index (CPI) and calculate inflation using monthly data from the Bank of Canada. The program creates a graph of historical CPI levels and annual percentage changes, then uses the data to compare prices between two periods.
+This project uses Python and monthly data from the Bank of Canada to examine Canada's Consumer Price Index (CPI) and calculate inflation. The program also creates a graph of historical CPI levels and annual percentage changes, then uses the data to compare prices between two periods.
 
 The inflation calculator builds on the Bank of Canada's original version by allowing users to select a specific month and year instead of just a year.
 
@@ -11,8 +11,8 @@ The inflation calculator builds on the Bank of Canada's original version by allo
 
 - **InflationCalculator.py**: Main Python file containing the CPI analysis, graph and inflation calculator.
 - **STATIC_INFLATIONCALC.csv**: Monthly CPI dataset downloaded from the Bank of Canada.
-- **CPI_Graph.png**: Graph of Canadian CPI levels and annual inflation from 1914 to 2026.
-- **README.md**: Project description, instructions and sample results.
+- **CPI_Graph.png**: Graph of Canadian CPI levels and annual inflation from January 1914 to September 2026.
+- **README.md**: Project description, instructions, analysis and sample results.
 
 ## How to Run the Program
 
@@ -32,7 +32,7 @@ The inflation calculator builds on the Bank of Canada's original version by allo
 
 ### Input Validation
 
-The program checks that the price is greater than zero and that both dates are available in the CPI dataset. Invalid entries produce an error message and the user is asked to try again.
+The program checks that the price is greater than zero and that both dates are available in the CPI dataset. Invalid entries will produce an error message and the user is asked to try again.
 
 The available data covers January 1914 to September 2026.
 
@@ -40,7 +40,7 @@ The available data covers January 1914 to September 2026.
 
 The CPI measures changes in the price level of a basket of consumer goods and services. Annual percentage changes are calculated by comparing each month's CPI with the value from the same month in the previous year.
 
-The graph uses the left axis for CPI levels and the right axis for annual percentage changes. A dotted horizontal line marks the CPI base level of 100, with 2002 as the reference year.
+The graph uses the left axis for CPI levels and the right axis for annual percentage changes. A dotted horizontal line shows the CPI base level of 100, with 2002 as the reference year.
 
 ### CPI Graph
 
@@ -48,9 +48,9 @@ The graph uses the left axis for CPI levels and the right axis for annual percen
 
 ### Graph Observations
 
-The CPI remained relatively low during the first half of the twentieth century before increasing more rapidly from the 1970s onward. By September 2026, the index had reached 170.0, compared with approximately 6.0 in January 1914.
+The CPI remained relatively low during the early 1900s, then increased more rapidly from the 1970s onward. By September 2026, the index had reached 170.0, compared with approximately 6.0 back in January 1914.
 
-Annual inflation shows a different pattern. While the CPI has generally increased over time, the rate of inflation has fluctuated considerably.
+On the other hand, annual inflation does not show the same pattern. While the CPI has generally increased over time, the rate of inflation has fluctuated significantly.
 
 Some notable periods include:
 
@@ -59,7 +59,7 @@ Some notable periods include:
 - **1970s and early 1980s:** Inflation remained elevated for several years, reaching double-digit rates at certain points.
 - **2021-2022:** Inflation increased again, reaching approximately 8% before declining in the following years.
 
-Although the inflation rate fell after 2022, the CPI continued rising. This shows that a lower inflation rate does not necessarily mean prices are decreasing. Instead, prices may still be increasing at a slower pace.
+Although the inflation rate fell after 2022, the CPI continued to rise. This shows that a lower inflation rate does not necessarily mean prices are decreasing. Instead, prices may still be increasing at a slower pace.
 
 ## Inflation Calculator
 
